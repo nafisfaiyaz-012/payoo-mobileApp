@@ -16,11 +16,13 @@
         integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
+<!-- might delete the height later -->
 
 <body class="bg-[#f4f5f7]">
-    <div class="max-w-[480px] mx-auto min-h-[200px]">
+    <section class="max-w-[480px] mx-auto min-h-[200px]">
+
         <!-- upper section -->
-        <section class="bg-white rounded-b-3xl">
+        <section class="bg-white rounded-b-3xl ">
             <nav class="flex justify-between items-center p-4 border-b-1 border-gray-300">
                 <div class="flex gap-2">
                     <img class="h-[50px] w-[50px]" src="./assets/Group.png" alt="">
@@ -43,39 +45,49 @@
             </div>
             <!-- card container -->
             <div class="min-h-[50px] p-4 mb-7 grid grid-cols-3 gap-[17px]">
-                <div class="border-1 border-gray-300 rounded-xl p-3 my-auto">
+                <!-- add money div -->
+                <div id="add-money-div" class="border-1 border-gray-300 rounded-xl p-3 my-auto cursor-pointer">
                     <img class="mx-auto h-[20px] w-[20px]" src="./assets/wallet1.png" alt="">
                     <h3 class="text-center text-[0.8rem]">Add Money</h3>
                 </div>
-                <div class="border-1 border-gray-300 rounded-xl p-3 my-auto">
+                <!-- cashOut div -->
+                <div id="cashout-div" class="border-1 border-gray-300 rounded-xl p-3 my-auto cursor-pointer">
                     <img class="mx-auto h-[20px] w-[20px]" src="./assets/send1.png" alt="">
                     <h3 class="text-center text-[0.8rem]">CashOut</h3>
                 </div>
-                <div class="border-1 border-gray-300 rounded-xl p-3 my-auto">
+                <!-- transfer Money div -->
+                <div id="transfer-div" class="border-1 border-gray-300 rounded-xl p-3 my-auto cursor-pointer">
                     <img class="mx-auto h-[20px] w-[20px]" src="./assets/money1.png" alt="">
                     <h3 class="text-center text-[0.8rem]">Transfer Money</h3>
                 </div>
-                <div class="border-1 border-gray-300 rounded-xl p-3 my-auto">
+                <!-- Det Bonus div -->
+                <div id="get-bonus-div" class="border-1 border-gray-300 rounded-xl p-3 my-auto">
                     <img class="mx-auto h-[20px] w-[20px]" src="./assets/bonus1.png" alt="">
                     <h3 class="text-center text-[0.8rem]">Get Bonus</h3>
                 </div>
-                <div class="border-1 border-gray-300 rounded-xl p-3 my-auto">
+                <!-- pay bill div -->
+                <div id="pay-bill-div" class="border-1 border-gray-300 rounded-xl p-3 my-auto">
                     <img class="mx-auto h-[20px] w-[20px]" src="./assets/purse1.png" alt="">
                     <h3 class="text-center text-[0.8rem]">Pay Bill</h3>
                 </div>
-                <div class="border-1 border-gray-300 rounded-xl p-3 my-auto">
+                <!-- Transaction div -->
+                <div id="transactions-div" class="border-1 border-gray-300 rounded-xl p-3 my-auto">
                     <img class="mx-auto h-[20px] w-[20px]" src="./assets/transaction1.png" alt="">
                     <h3 class="text-center text-[0.8rem]">Transactions</h3>
                 </div>
             </div>
         </section>
+
         <!-- lower section -->
-        <section id="add-money-section" class="p-5">
+
+        <!-- add money form section -->
+        <section id="add-money-section" class="p-5 hidden">
             <h1 class="font-bold mb-4">Add Money</h1>
-            <form id="add-money-form" class="bg-white p-8 rounded-3xl ">
+            <form id="add-money-form" class="bg-white p-8 rounded-3xl">
                 <div>
                     <label class="font-semibold">Mobile Number</label>
-                    <select id="bank-input" class="select bg-[#F4F5F7] rounded-3xl mt-4 mb-4 focus:outline-none focus:border-transparent w-full">
+                    <select id="bank-input"
+                        class="select bg-[#F4F5F7] rounded-3xl mt-4 mb-4 focus:outline-none focus:border-transparent w-full">
                         <option disabled selected>Select Bank</option>
                         <option>One Bank</option>
                         <option>Prime Bank</option>
@@ -84,7 +96,6 @@
                         <option>Janata Bank</option>
                     </select>
                 </div>
-
                 <div>
                     <label class="font-semibold">Bank Account Number</label>
                     <br>
@@ -104,14 +115,102 @@
                         class="input bg-[#F4F5F7] rounded-3xl mt-4 mb-4 focus:outline-none focus:border-transparent w-full" />
                 </div>
 
-                <button id="btn-add-money" class="btn bg-[#0874F2] w-full rounded-3xl text-white text-[1.2rem]">Add Money</button>
-                
+                <button id="btn-add-money" class="btn bg-[#0874F2] w-full rounded-3xl text-white text-[1.2rem]">Add
+                    Money</button>
             </form>
         </section>
-    </div>
+        <!-- add money message section -->
+        <section id="add-money-message" class="p-5 mb-6 hidden">
+            <div id="money-added-message" class="bg-white p-5 rounded-3xl flex justify-center items-center gap-4">
+                <i class="fa-solid fa-check"></i>
+                <div class="p-8">
+                    <p id="money-added">Money Added : </p>
+                    <p id="updated-balance">Updated Balance : </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- cashout form section -->
+        <section id="cashout-section" class="p-5 hidden">
+            <h1 class="font-bold mb-4">CashOut Money</h1>
+            <form id="cashout-form" class="bg-white p-8 rounded-3xl">
+
+                <div>
+                    <label class="font-semibold">Agent Number</label>
+                    <br>
+                    <input id="agent-input" type="text" placeholder="Enter 11 digit number"
+                        class="input bg-[#F4F5F7] rounded-3xl mt-4 mb-4 focus:outline-none focus:border-transparent w-full" />
+                </div>
+                <div>
+                    <label class="font-semibold">Amount</label>
+                    <br>
+                    <input id="withdraw-amount" type="text" placeholder="Enter amount to withdraw"
+                        class="input bg-[#F4F5F7] rounded-3xl mt-4 mb-4 focus:outline-none focus:border-transparent w-full" />
+                </div>
+                <div>
+                    <label class="font-semibold">Pin Number</label>
+                    <br>
+                    <input id="withdraw-pin" type="text" placeholder="Enter 4 digit pin number"
+                        class="input bg-[#F4F5F7] rounded-3xl mt-4 mb-4 focus:outline-none focus:border-transparent w-full" />
+                </div>
+
+                <button id="btn-withdraw" class="btn bg-[#0874F2] w-full rounded-3xl text-white text-[1.2rem]">Withdraw
+                    Money</button>
+            </form>
+        </section>
+        <!-- cashout message section -->
+        <section id="cashout-message" class="p-5 hidden">
+            <div id="cashout-message" class="bg-white p-8 rounded-3xl flex justify-center items-center gap-4 mb-7">
+                <i class="fa-solid fa-check"></i>
+                <div>
+                    <p id="cashout-money">CashOut Money : </p>
+                    <p id="updated-balance-after-cashout">Updated Balance : </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- transfer money section -->
+        <section id="transfer-money-section" class="p-5 hidden">
+            <h1 class="font-bold mb-4">Transfer Money</h1>
+            <form id="transfer-money-form" class="bg-white p-8 rounded-3xl">
+
+                <div>
+                    <label class="font-semibold">User Account Number</label>
+                    <br>
+                    <input id="" type="text" placeholder="Enter 11 digit number"
+                        class="input bg-[#F4F5F7] rounded-3xl mt-4 mb-4 focus:outline-none focus:border-transparent w-full" />
+                </div>
+                <div>
+                    <label class="font-semibold">Amount</label>
+                    <br>
+                    <input id="transfer-amount" type="text" placeholder="Enter amount to withdraw"
+                        class="input bg-[#F4F5F7] rounded-3xl mt-4 mb-4 focus:outline-none focus:border-transparent w-full" />
+                </div>
+                <div>
+                    <label class="font-semibold">Pin Number</label>
+                    <br>
+                    <input id="" type="text" placeholder="Enter 4 digit pin number"
+                        class="input bg-[#F4F5F7] rounded-3xl mt-4 mb-4 focus:outline-none focus:border-transparent w-full" />
+                </div>
+
+                <button id="btn-send-now" class="btn bg-[#0874F2] w-full rounded-3xl text-white text-[1.2rem]">Send
+                    Now</button>
+            </form>
+        </section>
+        <!-- transfer money message section -->
+        <section id="transfer-msg" class="p-5 hidden">
+            <div id="" class="bg-white p-8 rounded-3xl flex justify-center items-center gap-4 mb-7">
+                <i class="fa-solid fa-check"></i>
+                <div>
+                    <p id="trasnferred-money">Transferred Money : </p>
+                    <p id="balance-after-transfer">Balance after transfer: </p>
+                </div>
+            </div>
+        </section>
+    </section>
 
     <!-- js link -->
-     <script src="./js/home.js"></script>
+    <script src="./js/home.js"></script>
 </body>
 
 </html>
