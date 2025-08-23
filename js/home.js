@@ -1,7 +1,7 @@
 // event on logout button
-document.getElementById('btn-logout').addEventListener('click',function(){
-    window.location.href = '../index.html'
-})
+document.getElementById("btn-logout").addEventListener("click", function () {
+  window.location.href = "../index.html";
+});
 // event on add money button
 document
   .getElementById("btn-add-money")
@@ -44,6 +44,9 @@ document
   });
 //add money div event
 document.getElementById("add-money-div").addEventListener("click", function () {
+  //start section hiding
+  document.getElementById("start-section").style.display = "none";
+
   document.getElementById("add-money-section").style.display = "block";
   document.getElementById("cashout-section").style.display = "none";
   document.getElementById("cashout-message").style.display = "none";
@@ -52,6 +55,9 @@ document.getElementById("add-money-div").addEventListener("click", function () {
 });
 //cashout div event
 document.getElementById("cashout-div").addEventListener("click", function () {
+  //start section hiding
+  document.getElementById("start-section").style.display = "none";
+
   document.getElementById("cashout-section").style.display = "block";
   document.getElementById("add-money-section").style.display = "none";
   document.getElementById("add-money-message").style.display = "none";
@@ -114,9 +120,13 @@ document
   });
 // transfer money card event
 document.getElementById("transfer-div").addEventListener("click", function () {
+  //start section hiding
+  document.getElementById("start-section").style.display = "none";
+
   document.getElementById("transfer-money-section").style.display = "block";
   document.getElementById("add-money-section").style.display = "none";
   document.getElementById("cashout-section").style.display = "none";
+  document.getElementById("cashout-message").style.display = "none";
   document.getElementById("add-money-message").style.display = "none";
   document.getElementById("transfer-msg").style.display = "none";
 });
