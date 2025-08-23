@@ -1,6 +1,7 @@
 // event on logout button
 document.getElementById("btn-logout").addEventListener("click", function () {
-  window.location.href = "../index.html";
+  window.location.href = "index.html";
+  
 });
 // event on add money button
 document
