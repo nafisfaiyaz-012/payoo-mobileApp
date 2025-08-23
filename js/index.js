@@ -24,7 +24,7 @@ document.getElementById("btn-login")
     // console.log(mobileNumberInput,pinInput);
     
     if(mobileCheck === mobileNumberInput && pinCheck === pinInput){
-        window.location.href = '../home.html';
+        window.location.href = 'home.html';
         
     }
     else{
