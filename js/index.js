@@ -1,4 +1,3 @@
-
 /* 
 //to use this first disable the login button
  document.getElementById('mobile-number-input').addEventListener('keyup',function(event){
@@ -13,23 +12,20 @@
 */
 
 //login button functionality
-document.getElementById("btn-login")
-.addEventListener("click", function (e) {
-    e.preventDefault();
-    //normal showed in the class
-    const mobileCheck = '01701748500';
-    const pinCheck = '48215'
-    const mobileNumberInput = document.getElementById('mobile-number-input').value;
-    const pinInput = document.getElementById('pin-input').value;
-    // console.log(mobileNumberInput,pinInput);
-    
-    if(mobileCheck === mobileNumberInput && pinCheck === pinInput){
-        window.location.href = 'home.html';
-        
-    }
-    else{
-        alert('Invalid Credentials');
-    }
+document.getElementById("btn-login").addEventListener("click", function (e) {
+  e.preventDefault();
+  //normal showed in the class
+  const mobileCheck = "01701748500";
+  const pinCheck = "48215";
+  const mobileNumberInput = document.getElementById(
+    "mobile-number-input"
+  ).value;
+  const pinInput = document.getElementById("pin-input").value;
+  // console.log(mobileNumberInput,pinInput);
 
-
+  if (mobileCheck === mobileNumberInput && pinCheck === pinInput) {
+    window.location.href = "home.html";
+  } else {
+    alert("Invalid Credentials");
+  }
 });

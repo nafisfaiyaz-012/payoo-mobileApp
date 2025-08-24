@@ -19,7 +19,7 @@
 <!-- might delete the height later -->
 
 <body class="bg-[#f4f5f7]">
-    <section class="max-w-[480px] mx-auto min-h-[200px]">
+    <section id="all-section-parent" class="max-w-[480px] mx-auto min-h-[900px]">
 
         <!-- upper section -->
         <section class="bg-white rounded-b-3xl ">
@@ -46,32 +46,36 @@
             <!-- card container -->
             <div class="min-h-[50px] p-4 mb-7 grid grid-cols-3 gap-[17px]">
                 <!-- add money div -->
-                <div id="add-money-div" class="border-1 border-gray-300 rounded-xl p-3 my-auto cursor-pointer">
+                <div id="add-money-div"
+                    class="toggle-style border-1 border-gray-300 rounded-xl p-3 my-auto cursor-pointer">
                     <img class="mx-auto h-[20px] w-[20px]" src="./assets/wallet1.png" alt="">
                     <h3 class="text-center text-[0.8rem]">Add Money</h3>
                 </div>
                 <!-- cashOut div -->
-                <div id="cashout-div" class="border-1 border-gray-300 rounded-xl p-3 my-auto cursor-pointer">
+                <div id="cashout-div"
+                    class="toggle-style border-1 border-gray-300 rounded-xl p-3 my-auto cursor-pointer">
                     <img class="mx-auto h-[20px] w-[20px]" src="./assets/send1.png" alt="">
                     <h3 class="text-center text-[0.8rem]">CashOut</h3>
                 </div>
                 <!-- transfer Money div -->
-                <div id="transfer-div" class="border-1 border-gray-300 rounded-xl p-3 my-auto cursor-pointer">
+                <div id="transfer-div"
+                    class="toggle-style border-1 border-gray-300 rounded-xl p-3 my-auto cursor-pointer">
                     <img class="mx-auto h-[20px] w-[20px]" src="./assets/money1.png" alt="">
                     <h3 class="text-center text-[0.8rem]">Transfer Money</h3>
                 </div>
                 <!-- Det Bonus div -->
-                <div id="get-bonus-div" class="border-1 border-gray-300 rounded-xl p-3 my-auto">
+                <div id="get-bonus-div" class="toggle-style border-1 border-gray-300 rounded-xl p-3 my-auto">
                     <img class="mx-auto h-[20px] w-[20px]" src="./assets/bonus1.png" alt="">
                     <h3 class="text-center text-[0.8rem]">Get Bonus</h3>
                 </div>
                 <!-- pay bill div -->
-                <div id="pay-bill-div" class="border-1 border-gray-300 rounded-xl p-3 my-auto">
+                <div id="pay-bill-div" class="toggle-style border-1 border-gray-300 rounded-xl p-3 my-auto">
                     <img class="mx-auto h-[20px] w-[20px]" src="./assets/purse1.png" alt="">
                     <h3 class="text-center text-[0.8rem]">Pay Bill</h3>
                 </div>
                 <!-- Transaction div -->
-                <div id="transactions-div" class="border-1 border-gray-300 rounded-xl p-3 my-auto">
+                <div id="transactions-div"
+                    class="toggle-style border-1 border-gray-300 rounded-xl p-3 my-auto cursor-pointer">
                     <img class="mx-auto h-[20px] w-[20px]" src="./assets/transaction1.png" alt="">
                     <h3 class="text-center text-[0.8rem]">Transactions</h3>
                 </div>
@@ -79,9 +83,12 @@
         </section>
 
         <!-- lower section -->
-
+        <!-- start section  -->
+        <section id="start-section" class="form p-5">
+            <p class="bg-white p-8 rounded-3xl flex justify-center items-center mb-7">Start Your Operation</p>
+        </section>
         <!-- add money form section -->
-        <section id="add-money-section" class="p-5 hidden">
+        <section id="add-money-section" class="form p-5 hidden">
             <h1 class="font-bold mb-4">Add Money</h1>
             <form id="add-money-form" class="bg-white p-8 rounded-3xl">
                 <div>
@@ -120,7 +127,7 @@
             </form>
         </section>
         <!-- add money message section -->
-        <section id="add-money-message" class="p-5 mb-6 hidden">
+        <section id="add-money-message" class="message p-5 mb-6 hidden">
             <div id="money-added-message" class="bg-white p-5 rounded-3xl flex justify-center items-center gap-4">
                 <i class="fa-solid fa-check"></i>
                 <div class="p-8">
@@ -130,8 +137,9 @@
             </div>
         </section>
 
+
         <!-- cashout form section -->
-        <section id="cashout-section" class="p-5 hidden">
+        <section id="cashout-section" class="form p-5 hidden">
             <h1 class="font-bold mb-4">CashOut Money</h1>
             <form id="cashout-form" class="bg-white p-8 rounded-3xl">
 
@@ -157,9 +165,10 @@
                 <button id="btn-withdraw" class="btn bg-[#0874F2] w-full rounded-3xl text-white text-[1.2rem]">Withdraw
                     Money</button>
             </form>
+
         </section>
         <!-- cashout message section -->
-        <section id="cashout-message" class="p-5 hidden">
+        <section id="cashout-message" class="message p-5 hidden">
             <div id="cashout-message" class="bg-white p-8 rounded-3xl flex justify-center items-center gap-4 mb-7">
                 <i class="fa-solid fa-check"></i>
                 <div>
@@ -170,7 +179,7 @@
         </section>
 
         <!-- transfer money section -->
-        <section id="transfer-money-section" class="p-5 hidden">
+        <section id="transfer-money-section" class="form p-5 hidden">
             <h1 class="font-bold mb-4">Transfer Money</h1>
             <form id="transfer-money-form" class="bg-white p-8 rounded-3xl">
 
@@ -196,9 +205,10 @@
                 <button id="btn-send-now" class="btn bg-[#0874F2] w-full rounded-3xl text-white text-[1.2rem]">Send
                     Now</button>
             </form>
+
         </section>
         <!-- transfer money message section -->
-        <section id="transfer-msg" class="p-5 hidden">
+        <section id="transfer-msg" class="message p-5 hidden">
             <div id="" class="bg-white p-8 rounded-3xl flex justify-center items-center gap-4 mb-7">
                 <i class="fa-solid fa-check"></i>
                 <div>
@@ -207,8 +217,16 @@
                 </div>
             </div>
         </section>
-        <section id="start-section" class="p-5">
-            <p class="bg-white p-8 rounded-3xl flex justify-center items-center mb-7">Start Your Operation</p>
+        <!-- transaction section -->
+        <section id="transactions-section" class="form p-5 hidden">
+            <div class=" flex justify-between">
+                <h1 class="font-bold mb-4">Transaction History</h1>
+                <p>View All</p>
+            </div>
+            <div id="transaction-card-section">
+
+            </div>
+            
         </section>
     </section>
 
